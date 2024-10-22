@@ -1,0 +1,14 @@
+.board {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+  
+.columns {
+  display: flex;
+  flex-direction: row;
+}
+  
+* {
+  font-family: sans-serif;
+}

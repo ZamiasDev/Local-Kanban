@@ -1,0 +1,15 @@
+<div class="column">
+  <div class="header">
+    <div class="title">{{ column.title }}</div>
+    <button class="addCard" (click)="addCard()">+</button>
+  </div>
+  
+  <div cdkDropList
+      [cdkDropListData]="column.cards"
+      (cdkDropListDropped)="onCardDrop($event)"
+      [id]=column.title
+      class="listCards"
+      [cdkDropListConnectedTo]="getOtherColumnsNames()">
+    <app-card [cardInformation]="card" cdkDrag *ngFor="let card of column.cards"></app-card>
+  </div>
+</div>

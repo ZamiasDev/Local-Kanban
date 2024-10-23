@@ -1,7 +1,7 @@
 <div class="column">
   <div class="header">
     <div class="title">{{ column.title }}</div>
-    <button class="addCard" (click)="addCard()">+</button>
+    <button class="addCardButton" (click)="addCard()">+</button>
   </div>
   
   <div cdkDropList
@@ -10,6 +10,6 @@
       [id]=column.title
       class="listCards"
       [cdkDropListConnectedTo]="getOtherColumnsNames()">
-    <app-card [cardInformation]="card" cdkDrag *ngFor="let card of column.cards"></app-card>
+      <app-card [cardInformation]="card" class="card" cdkDrag *ngFor="let card of column.cards"></app-card>
   </div>
 </div>

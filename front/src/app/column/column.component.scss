@@ -1,17 +1,18 @@
 .column {
     background-color: whitesmoke;
     border-radius: 8px;
-    margin: 10px;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 4px;
     padding-bottom: 4px;
-    height: 85vh;
+    height: calc(100vh - (10px + 10px + 20px + 20px + 4px + 4px));
 }
 
 .listCards {
-    height: 90%;
+    height: 93%;
     overflow-x: scroll;
+    display: flex;
+    flex-direction: column;
 }
 
 .header {
@@ -24,7 +25,7 @@
     margin-left: 5px;
 }
 
-.addCard {
+.addCardButton {
     justify-self: end;
     background-color: white;
     border-radius: 8px;
@@ -41,4 +42,28 @@
     width: 30px;
     text-align: center;
     transition: all 200ms;
+}
+
+.cdk-drag-preview {
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+                0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.listCards.cdk-drop-list-dragging .card:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.cdk-drag-placeholder {
+    opacity: 0;
+}
+
+.card:last-child {
+    border: none;
+}
+
+.cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
 }

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { DataService } from './data.service';
+
 
 @Component({
   selector: 'app-root',
@@ -6,6 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  constructor(private dataservice: DataService) {}
+
   columns = [
     {
       title: 'To Do',
@@ -43,5 +47,13 @@ export class AppComponent {
 
   moveCard(event: any) {
     console.log(`Card moved from ${event.from} to ${event.to}`);
+  }
+
+  addColumn() {
+    // const columnTitle = prompt('New column ID');
+    // if (columnTitle) {
+    //   this.dataservice.createColumn(columnTitle);
+    // }
+    this.dataservice.createColumn("ok");
   }
 }
